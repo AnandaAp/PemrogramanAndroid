@@ -34,7 +34,7 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:background="@color/pervyWhite"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="20dp">
 
         <EditText
             android:id="@+id/passLogin"
@@ -46,13 +46,22 @@
             android:autofillHints="" />
     </LinearLayout>
 
-    
+
     <Button
         android:background="@color/uclaBlue"
-        android:id="@+id/buttonLogin"
+        android:id="@+id/btnLogin"
         android:layout_marginRight="50dp"
         android:layout_marginLeft="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
         android:text="@string/Login" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/belum_punya_akun_daftar_disini"
+        android:gravity="center"/>
+
 </LinearLayout>
