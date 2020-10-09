@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class HomeScreenActivity extends AppCompatActivity {
+public class HomeScreen extends AppCompatActivity {
 
 
     @Override

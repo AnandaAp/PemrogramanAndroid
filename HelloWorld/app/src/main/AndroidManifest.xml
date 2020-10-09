@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:fullBackupContent="@xml/backup">
-        <activity android:name=".HomeScreenActivity" android:parentActivityName=".MainActivity"
+        <activity android:name=".HomeScreen" android:parentActivityName=".LoginActivity"
             >
 
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
