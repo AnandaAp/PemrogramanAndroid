@@ -1,34 +1,24 @@
 package com.android.helloworld;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText emailLogin;
     private EditText passLogin;
     private Button btnLogin;
-    public static final String EXTRA_MESSAGE1 = "com.android.helloworld.MESSAGE1";
-    public static final String EXTRA_MESSAGE2 = "com.android.helloworld.MESSAGE2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         init();
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                check();
-            }
-        });
+        btnLogin.setOnClickListener(v -> check());
     }
     private void init(){
         emailLogin = findViewById(R.id.emailLogin);
@@ -44,11 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         if(emailLogin.getText().toString().equals("admin")
                 && passLogin.getText().toString().equals("admin")){
             Toast.makeText(getApplicationContext(),"Login Sukses",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, LoginActivity.class);
-            String email = emailLogin.getText().toString();
-            String pass = passLogin.getText().toString();
-            intent.putExtra(EXTRA_MESSAGE1, email);
-            intent.putExtra(EXTRA_MESSAGE2,pass);
+            Intent intent = new Intent(this, HomeScreen.class);
             startActivity(intent);
         }
         else {
