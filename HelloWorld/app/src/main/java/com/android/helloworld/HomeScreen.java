@@ -16,8 +16,7 @@ public class HomeScreen extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         //Memulai Program
         init();
-        //Menghilangkan ActionBar
-        hideTitleBar();
+
     }
     private void init(){
         intent = getIntent();
@@ -25,6 +24,8 @@ public class HomeScreen extends AppCompatActivity {
         bottomNav.setOnNavigationItemSelectedListener(navListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.contentFrag,new HomeFragment()).
                 commit();
+        //Menghilangkan ActionBar
+        hideTitleBar();
     }
     //Method agar dapat berpindah antar fragment
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =

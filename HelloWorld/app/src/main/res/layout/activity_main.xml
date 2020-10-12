@@ -4,21 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/ic_background"
     android:clickable="true"
     android:focusableInTouchMode="true"
     android:focusable="true">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="125dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="110dp"
+        android:contentDescription="@string/login_logo"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_login_logo" />
+
     <EditText
         android:id="@+id/emailLogin"
-        android:layout_width="285dp"
+        android:layout_width="wrap_content"
         android:layout_height="43dp"
         android:layout_marginTop="60dp"
         android:autofillHints="@string/email"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/custom_email"
         android:drawablePadding="5dp"
-        android:ems="10"
+        android:ems="15"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:paddingStart="10dp"
@@ -31,14 +44,14 @@
 
     <EditText
         android:id="@+id/passLogin"
-        android:layout_width="285dp"
+        android:layout_width="wrap_content"
         android:layout_height="43dp"
         android:layout_marginTop="20dp"
         android:autofillHints="@string/password"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/custom_password"
         android:drawablePadding="5dp"
-        android:ems="10"
+        android:ems="15"
         android:hint="@string/password"
         android:imeOptions="actionSend"
         android:inputType="textPassword"
@@ -52,9 +65,10 @@
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:ems="10"
         android:textColor="@color/oxfordBlue"
         android:background="@drawable/login_round"
         android:text="@string/sign_in"
@@ -70,7 +84,7 @@
         android:layout_marginTop="48dp"
         android:text="@string/butuh_bantuan"
         android:textColor="@color/fireOpal"
-        app:layout_constraintEnd_toStartOf="@+id/btnLogin"
+        app:layout_constraintEnd_toEndOf="@+id/passLogin"
         app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="@+id/passLogin"
         app:layout_constraintTop_toBottomOf="@+id/passLogin" />
@@ -102,16 +116,4 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/keteranganBawah" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="124dp"
-        android:layout_height="131dp"
-        android:layout_marginTop="112dp"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_login_logo"
-        android:contentDescription="@string/login_logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
