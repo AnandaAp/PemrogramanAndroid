@@ -22,15 +22,15 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //Proses program
         init();
-        btnLogin.setOnClickListener(v -> check());
-        hideTitleBar();
-        dismissKeyboard(emailLogin,passLogin);
     }
     //Method untuk menginisialisasi variable
     private void init(){
         emailLogin = findViewById(R.id.emailLogin);
         passLogin = findViewById(R.id.passLogin);
         btnLogin = findViewById(R.id.btnLogin);
+        hideTitleBar();
+        dismissKeyboard(emailLogin,passLogin);
+        btnLogin.setOnClickListener(v -> check());
     }
     //Method untuk input validasi
     private  void check(){
@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Login Sukses",Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, HomeScreen.class);
             startActivity(intent);
+            finish();
         }
         else {
             Toast.makeText(getApplicationContext(),"Username atau Password Anda tidak benar!",
