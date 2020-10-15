@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         else if(emailLogin.getText().toString().equals("admin")
                 && passLogin.getText().toString().equals("admin")){
             Toast.makeText(getApplicationContext(),"Login Sukses",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, HomeScreen.class);
+            Intent intent = new Intent(this, Dashboard.class);
             startActivity(intent);
             finish();
         }
