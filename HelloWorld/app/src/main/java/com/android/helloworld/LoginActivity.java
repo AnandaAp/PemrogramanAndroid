@@ -44,7 +44,9 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Login Sukses",Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, Dashboard.class);
             startActivity(intent);
+            intent.putExtra("Coba_intent_extra","percobaan");
             finish();
+
         }
         else {
             Toast.makeText(getApplicationContext(),"Username atau Password Anda tidak benar!",

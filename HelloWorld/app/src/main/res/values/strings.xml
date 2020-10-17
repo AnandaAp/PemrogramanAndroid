@@ -16,4 +16,7 @@
     <string name="sign_up">Sign Up</string>
     <string name="login_logo">Login Logo</string>
     <string name="hello_world">Hello World</string>
+    <string name="wifi_mode">Wifi Mode</string>
+    <string name="wifiOn">Wifi is On</string>
+    <string name="wifiOff">Wifi is Off</string>\
 </resources>
