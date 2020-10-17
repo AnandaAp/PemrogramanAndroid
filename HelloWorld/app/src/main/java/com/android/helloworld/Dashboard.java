@@ -1,16 +1,26 @@
 package com.android.helloworld;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-import android.os.Bundle;
+
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
+//import android.content.BroadcastReceiver;
+//import android.content.Context;
+//import android.content.Intent;
+//import android.content.IntentFilter;
+//import android.net.wifi.WifiManager;
+//import android.widget.CompoundButton;
+//import com.google.android.material.switchmaterial.SwitchMaterial;
+
 public class Dashboard extends AppCompatActivity {
-    TabLayout tabLayout;
+    private TabLayout tabLayout;
     TabItem home,profile,setting;
-    ViewPager viewPager;
-    PageAdapter pageAdapter;
+    private ViewPager viewPager;
+    private PageAdapter pageAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,19 +31,19 @@ public class Dashboard extends AppCompatActivity {
     }
 
     private void init(){
+        hideTitleBar();
         tabLayout = findViewById(R.id.tabLayout);
         home = findViewById(R.id.home);
         profile = findViewById(R.id.profile);
         setting = findViewById(R.id.setting);
-        hideTitleBar();
         viewPager = findViewById(R.id.viewPager);
         pageAdapter = new PageAdapter(getSupportFragmentManager(), tabLayout.getTabCount());
     }
     private void hideTitleBar(){
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
+            if (getSupportActionBar() != null) {
+                getSupportActionBar().hide();
+            }
         }
-    }
     private void viewPagerOnSet(){
         viewPager.setAdapter(pageAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -54,4 +64,5 @@ public class Dashboard extends AppCompatActivity {
             }
         });
     }
+
 }
