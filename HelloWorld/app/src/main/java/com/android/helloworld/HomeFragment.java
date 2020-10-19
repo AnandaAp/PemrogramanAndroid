@@ -34,17 +34,17 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container,false);
         wifiSwitch = view.findViewById(R.id.wifiSwitch);
-        initBroadcastReceiver();
+        initWifiConfigure();
         return view;
     }
 
-    private void initBroadcastReceiver(){
+    private void initWifiConfigure(){
         WifiManager wifiManager = (WifiManager) requireContext().
                 getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         wifiSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if(isChecked && !wifiManager.isWifiEnabled()){
-                //semenjak Android Q, Sistem tidak dapat mematikan wifi secara langsung
-                //jika versi android adalah Android Q atau lebih maka harus melalui jendela setelan
+                /*semenjak Android Q, Sistem tidak dapat mematikan wifi secara langsung
+                jika versi android adalah Android Q atau lebih maka harus melalui jendela setelan*/
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 //digunakan untuk menampilkan panel wifi untuk memilih jaringan wifi
                     Intent panelIntent = new Intent(Settings.Panel.ACTION_WIFI);
@@ -86,7 +86,7 @@ public class HomeFragment extends Fragment {
 
     /*memanggil object WifiBroadcastReceiver untuk membuat switch selalu runtime ketika
     wifi on ataupun off*/
-    private WifiBroadcastReceiver wifiBroadcast = new WifiBroadcastReceiver(){
+    private final WifiBroadcastReceiver wifiBroadcast = new WifiBroadcastReceiver(){
         @Override
         public void onReceive(Context context, Intent intent) {
             int wifiStateExtra = intent.getIntExtra(WifiManager.EXTRA_WIFI_STATE,
