@@ -18,5 +18,8 @@
     <string name="hello_world">Hello World</string>
     <string name="wifi_mode">Wifi Mode</string>
     <string name="wifiOn">Wifi is On</string>
-    <string name="wifiOff">Wifi is Off</string>\
+    <string name="wifiOff">Wifi is Off</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="background_service">Background Service</string>\
 </resources>

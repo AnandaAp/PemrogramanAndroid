@@ -3,7 +3,7 @@
     package="com.android.helloworld">
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <application
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup"
@@ -31,7 +31,8 @@
         <activity
             android:name=".Dashboard"
             android:parentActivityName=".LoginActivity" />
-
+        <service android:name=".MyJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
     </application>
 
 </manifest>

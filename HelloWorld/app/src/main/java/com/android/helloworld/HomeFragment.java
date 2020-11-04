@@ -1,6 +1,8 @@
 package com.android.helloworld;
 
-import android.annotation.SuppressLint;
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -8,18 +10,24 @@ import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
-public class HomeFragment extends Fragment {
+public class    HomeFragment extends Fragment {
+    private static final String TAG = "Dashboard";
     WifiBroadcastReceiver wifiBroadcastReceiver = new WifiBroadcastReceiver();
     SwitchMaterial wifiSwitch;
+    Button btnStartJob;
+    Button btnStopJob;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,12 +36,14 @@ public class HomeFragment extends Fragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    @SuppressLint("CutPasteId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container,false);
         wifiSwitch = view.findViewById(R.id.wifiSwitch);
+        btnStartJob = view.findViewById(R.id.btnStart);
+        btnStopJob = view.findViewById(R.id.btnStop);
+        serviceInit();
         initWifiConfigure();
         return view;
     }
@@ -67,19 +77,25 @@ public class HomeFragment extends Fragment {
         });
     }
 
+    private void serviceInit(){
+            btnStartJob.setOnClickListener(v -> onStartJobService());
+            btnStopJob.setOnClickListener(v -> onStopJobService());
+    }
+
     //saya melakukan register pada broadcast saat program berjalan, maka notifikasi akan muncul
     @Override
-    public void onResume() {
-        super.onResume();
+    public void onStart() {
+        super.onStart();
         IntentFilter filter = new IntentFilter(WifiManager.WIFI_STATE_CHANGED_ACTION);
+        filter.addAction("com.android.HelloWorld.SEND_ACTION");
         requireActivity().registerReceiver(wifiBroadcast,filter);
         requireActivity().registerReceiver(wifiBroadcastReceiver,filter);
     }
 
     //ketika program dikeluarkan atau di minimize, maka notifikasi tidak akan muncul
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onStop() {
+        super.onStop();
         requireActivity().unregisterReceiver(wifiBroadcast);
         requireActivity().unregisterReceiver(wifiBroadcastReceiver);
     }
@@ -101,5 +117,32 @@ public class HomeFragment extends Fragment {
             }
         }
     };
-
+    private void onStartJobService(){
+        Log.i(TAG, "Masuk ke onStartJobService");
+        Log.i(TAG, "onStartJobService: Membuat componentName");
+        ComponentName componentName = new ComponentName(requireActivity().getApplicationContext(),MyJobService.class);
+        Log.i(TAG, "onStartJobService: membuat info");
+        JobInfo info = new JobInfo.Builder(121018,componentName)
+                .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
+                .setPersisted(true)
+                .setPeriodic(15 * 60 * 1000)
+                .build();
+        Log.i(TAG, "onStartJobService: membuat scheduler");
+        JobScheduler scheduler = (JobScheduler) requireContext().getSystemService(Context.JOB_SCHEDULER_SERVICE);
+        int resultCode = scheduler.schedule(info);
+        Log.i(TAG, "onStartJobService: pengecekan resultCode");
+        if(resultCode == JobScheduler.RESULT_SUCCESS){
+            Log.i(TAG, "onStartJobService: job berhasil di buat");
+        }
+        else{
+            Log.i(TAG, "onStartJobService: job scheduling failed");
+        }
+    }
+    private void onStopJobService(){
+        JobScheduler scheduler = (JobScheduler) requireContext().getSystemService(Context.JOB_SCHEDULER_SERVICE);
+        scheduler.cancel(121018);
+        Log.i(TAG, "onStopJobService: job di hentikan");
+        Toast.makeText(requireContext().getApplicationContext()
+                ,"Service dihentikan",Toast.LENGTH_SHORT).show();
+    }
 }
