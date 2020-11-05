@@ -21,5 +21,42 @@
     <string name="wifiOff">Wifi is Off</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
-    <string name="background_service">Background Service</string>\
+    <string name="background_service">Background Service</string>
+    <string name="sinopsis">Sinopsis</string>
+    <string name="images">Images</string>
+    <string name="title">Title</string>
+
+    <string-array name="ListFilm">
+        <item>Wonder Woman 1984</item>
+        <item>Trolls World Tour</item>
+        <item>The Crood : A New Age</item>
+        <item>The SpongeBob Movie: Sponge on the Run</item>
+        <item>Mulan</item>
+        <item>Bad Boys for Life</item>
+        <item>A Quiet Place Part II</item>
+        <item>Peter Rabbit 2: The Runaway</item>
+        <item>Birds of Prey: And the Fantabulous Emancipation of One Harley Quinn</item>
+        <item>Dolittle</item>
+        <item>Onward</item>
+        <item>The Invisible Man</item>v
+        <item>Sonic the Hedgehog</item>
+        <item>Free Guy</item>
+    </string-array>
+
+    <string-array name="Sinopsis">
+        <item>Fast forward to the 1980s as Wonder Woman\'s next big screen adventure finds her facing two all-new foes: Max Lord and The Cheetah.</item>
+        <item>When the Queen of the Hard Rock Trolls tries to take over all the Troll kingdoms, Queen Poppy and her friends try different ways to save all the Trolls.</item>
+        <item>The prehistoric family the Croods are challenged by a rival family the Bettermans, who claim to be better and more evolved.</item>
+        <item>After SpongeBob\'s beloved pet snail Gary is snail-napped, he and Patrick embark on an epic adventure to The Lost City of Atlantic City to bring Gary home.</item>
+        <item>A young Chinese maiden disguises herself as a male warrior in order to save her father.</item>
+        <item>Miami detectives Mike Lowrey and Marcus Burnett must face off against a mother-and-son pair of drug lords who wreak vengeful havoc on their city.</item>
+        <item>Following the events at home, the Abbott family now face the terrors of the outside world. Forced to venture into the unknown, they realize the creatures that hunt by sound are not the only threats lurking beyond the sand path.</item>
+        <item>Thomas and Bea are now married and living with Peter and his rabbit family. Bored of life in the garden, Peter goes to the big city, where he meets shady characters and ends up creating chaos for the whole family.</item>
+        <item>After splitting with the Joker, Harley Quinn joins superheroes Black Canary, Huntress and Renee Montoya to save a young girl from an evil crime lord.</item>
+        <item>A physician who can talk to animals embarks on an adventure to find a legendary island with a young apprentice and a crew of strange pets.</item>
+        <item>Two elven brothers embark on a quest to bring their father back for one day.</item>
+        <item>When Cecilia\'s abusive ex takes his own life and leaves her his fortune, she suspects his death was a hoax. As a series of coincidences turn lethal, Cecilia works to prove that she is being hunted by someone nobody can see.</item>v
+        <item>After discovering a small, blue, fast hedgehog, a small-town police officer must help him defeat an evil genius who wants to do experiments on him.</item>
+        <item>A bank teller discovers that he\'s actually an NPC inside a brutal, open world video game.</item>
+    </string-array>
 </resources>
