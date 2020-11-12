@@ -55,8 +55,13 @@
         <item>After splitting with the Joker, Harley Quinn joins superheroes Black Canary, Huntress and Renee Montoya to save a young girl from an evil crime lord.</item>
         <item>A physician who can talk to animals embarks on an adventure to find a legendary island with a young apprentice and a crew of strange pets.</item>
         <item>Two elven brothers embark on a quest to bring their father back for one day.</item>
-        <item>When Cecilia\'s abusive ex takes his own life and leaves her his fortune, she suspects his death was a hoax. As a series of coincidences turn lethal, Cecilia works to prove that she is being hunted by someone nobody can see.</item>v
+        <item>When Cecilia\'s abusive ex takes his own life and leaves her his fortune, she suspects his death was a hoax. As a series of coincidences turn lethal, Cecilia works to prove that she is being hunted by someone nobody can see.</item>
+        v
         <item>After discovering a small, blue, fast hedgehog, a small-town police officer must help him defeat an evil genius who wants to do experiments on him.</item>
         <item>A bank teller discovers that he\'s actually an NPC inside a brutal, open world video game.</item>
     </string-array>
+
+    <string name="SIGN_UP">SIGN UP</string>
+    <string name="log_out">LOG OUT</string>
+    <string name="back_button">Back Button</string>
 </resources>
