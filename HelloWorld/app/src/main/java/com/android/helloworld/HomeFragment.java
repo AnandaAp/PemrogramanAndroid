@@ -19,6 +19,11 @@ import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
@@ -26,8 +31,9 @@ public class    HomeFragment extends Fragment {
     private static final String TAG = "Dashboard";
     WifiBroadcastReceiver wifiBroadcastReceiver = new WifiBroadcastReceiver();
     SwitchMaterial wifiSwitch;
-    Button btnStartJob;
-    Button btnStopJob;
+    Button btnStartJob,btnStopJob;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,7 @@ public class    HomeFragment extends Fragment {
         wifiSwitch = view.findViewById(R.id.wifiSwitch);
         btnStartJob = view.findViewById(R.id.btnStart);
         btnStopJob = view.findViewById(R.id.btnStop);
+
         serviceInit();
         initWifiConfigure();
         return view;
@@ -145,4 +152,6 @@ public class    HomeFragment extends Fragment {
         Toast.makeText(requireContext().getApplicationContext()
                 ,"Service dihentikan",Toast.LENGTH_SHORT).show();
     }
+
+
 }

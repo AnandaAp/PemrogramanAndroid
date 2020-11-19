@@ -17,10 +17,55 @@ import com.google.android.material.tabs.TabLayout;
 //import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class Dashboard extends AppCompatActivity {
-    private TabLayout tabLayout;
+    public static TabLayout getTabLayout() {
+        return tabLayout;
+    }
+
+    public static void setTabLayout(TabLayout tabLayout) {
+        Dashboard.tabLayout = tabLayout;
+    }
+
+    private static TabLayout tabLayout;
     TabItem home,profile,setting;
-    private ViewPager viewPager;
+
+    public static ViewPager getViewPager() {
+        return viewPager;
+    }
+
+    public static void setViewPager(ViewPager viewPager) {
+        Dashboard.viewPager = viewPager;
+    }
+
+    private static ViewPager viewPager;
     private PageAdapter pageAdapter;
+    private static int addToFirebase = 0;
+    private static boolean editData = false;
+
+    public static boolean isEditData() {
+        return editData;
+    }
+
+    public static void setEditData(boolean editData) {
+        Dashboard.editData = editData;
+    }
+
+    public static boolean isAfterEditData() {
+        return afterEditData;
+    }
+
+    public static void setAfterEditData(boolean afterEditData) {
+        Dashboard.afterEditData = afterEditData;
+    }
+
+    private static boolean afterEditData = false;
+
+    public static int getAddToFirebase() {
+        return addToFirebase;
+    }
+
+    public static void setAddToFirebase(int addToFirebase) {
+        Dashboard.addToFirebase = addToFirebase;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +90,9 @@ public class Dashboard extends AppCompatActivity {
             }
         }
     private void viewPagerOnSet(){
-        viewPager.setAdapter(pageAdapter);
-        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        getViewPager().setAdapter(pageAdapter);
+        getViewPager().addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        getTabLayout().addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());

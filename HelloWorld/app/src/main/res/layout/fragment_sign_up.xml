@@ -17,7 +17,7 @@
             android:background="@color/hanBlue"
             android:layout_weight="0.2">
             <TextView
-                android:id="@+id/signUpText"
+                android:id="@+id/tambahDataMahasiswa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/SIGN_UP"
@@ -35,7 +35,7 @@
                 android:layout_height="30dp"
                 android:src="@drawable/ic_back"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/signUpText"
+                app:layout_constraintEnd_toStartOf="@+id/tambahDataMahasiswa"
                 app:layout_constraintHorizontal_bias="0.15"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -49,46 +49,62 @@
 
             <EditText
                 android:id="@+id/signUpEmail"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginEnd="50dp"
                 android:ems="10"
-                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.2"
-                android:autofillHints="" />
+                app:layout_constraintVertical_bias="0.216" />
 
             <EditText
-                android:id="@+id/signInPassword"
-                android:layout_width="0dp"
+                android:id="@+id/signUnPassword"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="56dp"
                 android:ems="10"
-                android:hint="@string/password"
                 android:inputType="textPassword"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/signUpEmail"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/signUpEmail"
                 app:layout_constraintTop_toBottomOf="@+id/signUpEmail"
-                app:layout_constraintVertical_bias="0.10"
-                android:autofillHints="" />
+                app:layout_constraintVertical_bias="0.042" />
+
+            <TextView
+                android:id="@+id/labelEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="@+id/signUpEmail"
+                app:layout_constraintEnd_toStartOf="@+id/signUpEmail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/signUpEmail" />
+
+            <TextView
+                android:id="@+id/labelPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                app:layout_constraintBottom_toBottomOf="@+id/signUnPassword"
+                app:layout_constraintEnd_toStartOf="@+id/signUnPassword"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/signUnPassword" />
 
             <Button
                 android:id="@+id/btnSignUp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/shimmeringBlush"
-                android:text="@string/sign_up"
+                android:text="@string/SIGN_UP"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/signInPassword"
-                app:layout_constraintStart_toStartOf="@+id/signInPassword"
-                app:layout_constraintTop_toBottomOf="@+id/signInPassword"
-                app:layout_constraintVertical_bias="0.1" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.499"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/signUnPassword"
+                app:layout_constraintVertical_bias="0.18" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
