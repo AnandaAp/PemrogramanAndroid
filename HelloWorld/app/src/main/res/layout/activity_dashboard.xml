@@ -28,6 +28,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/setting"/>
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/setDataMahasiswa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/data_mahasiswa"/>
     </com.google.android.material.tabs.TabLayout>
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"

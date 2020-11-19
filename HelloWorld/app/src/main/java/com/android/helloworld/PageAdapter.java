@@ -23,6 +23,8 @@ public class PageAdapter extends FragmentPagerAdapter {
                 return new ProfileFragment();
             case 2:
                 return new SettingFragment();
+            case 3:
+                return new DataMahasiswa();
             default:
                 return null;
         }

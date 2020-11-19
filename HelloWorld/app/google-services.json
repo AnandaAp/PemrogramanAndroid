@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "117558127582",
+    "firebase_url": "https://helloworldforexampleproject.firebaseio.com",
+    "project_id": "helloworldforexampleproject",
+    "storage_bucket": "helloworldforexampleproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117558127582:android:e24e7ce7883dd0c4d14b4f",
+        "android_client_info": {
+          "package_name": "com.android.helloworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117558127582-b5p3suf2uv0gol5aslhae6g51jk5aikp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS5GyBxqP3UDjDG49PRHbMsorela17xsk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117558127582-b5p3suf2uv0gol5aslhae6g51jk5aikp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

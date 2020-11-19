@@ -23,13 +23,16 @@ public class SettingFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_setting, container, false);
         Button btnLogOut = view.findViewById(R.id.btnLogOut);
         btnLogOut.setOnClickListener(v -> logout());
+//        DataMahasiswa.getBtnSave().setText("SAVE");
         return view;
     }
+
     private void logout(){
         SessionManagement sessionManagement = new SessionManagement(requireContext());
         sessionManagement.removeSesion();
         moveToLogin();
     }
+
     private void moveToLogin() {
         Intent intent = new Intent(requireActivity(), LoginActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);

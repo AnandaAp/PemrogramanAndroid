@@ -2,7 +2,6 @@ package com.android.helloworld;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -15,9 +14,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import static android.content.ContentValues.TAG;
 
@@ -38,7 +35,7 @@ public class fragment_sign_up extends Fragment {
     }
     private void init(View view){
         EditText email = view.findViewById(R.id.signUpEmail);
-        EditText password = view.findViewById(R.id.signInPassword);
+        EditText password = view.findViewById(R.id.signUnPassword);
         Button btnSignUp = view.findViewById(R.id.btnSignUp);
         ImageView btnBack = view.findViewById(R.id.btnBack);
         dismissKeyboard(email,password);
